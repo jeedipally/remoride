@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+//import { LoanRequestService } from './services/loan-request.service';
 
 @Component({
   selector: 'app-root',
@@ -8,5 +9,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'RemoRides';
 
+  //constructor(private loanService: LoanRequestService) { }
+
   show="true";
+
 }

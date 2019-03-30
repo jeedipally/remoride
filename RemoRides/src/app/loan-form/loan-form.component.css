@@ -1,0 +1,10 @@
+#loanForm{
+    margin-top:30px;
+    display : block;
+}
+
+#loanForm input {
+    border-radius : 30px;
+    border : 1px solid black;
+    padding: 5px;
+}

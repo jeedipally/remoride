@@ -1,5 +1,6 @@
 
 <div class="container">
+  <!-- <ngb-alert class="danger">Warning</ngb-alert> -->
   <form [formGroup]="loanForm" id="loanForm" (ngSubmit)="onSubmit()">
     <div class="row">
         <div class="col-md-12">
@@ -27,7 +28,7 @@
             </label>
       </div>
     </div>
-    <div class="row">
+    <!-- <div class="row">
         <div class="col-md-12">
             <label>
                 Any existing loans: 
@@ -37,11 +38,11 @@
                 </span>
               </label>
         </div>
-      </div>
-      <div class="row" *ngIf="taken">
+      </div> -->
+      <div class="row">
         <div class="col-md-12">
-          <label>Enter Amount of Loan per annum: 
-              <input type="number" min=0 formControlName="loanAmount">
+          <label>Enter Amount of Loan amount requested: 
+              <input type="number" min=10000 formControlName="loanAmount">
           </label>
         </div>
       </div>

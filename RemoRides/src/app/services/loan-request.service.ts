@@ -17,6 +17,10 @@ export class LoanRequestService {
 
 
   submitForm(data: any[]){
-    return this.http.post("", data);
+    return this.http.post("http://localhost:8060/saveCustomer", data);
+  }
+
+  getLoanStatus(){
+    return this.http.get("http://localhost:8060/getAllLoans");
   }
 }

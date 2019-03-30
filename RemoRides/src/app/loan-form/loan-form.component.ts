@@ -12,9 +12,9 @@ export class LoanFormComponent implements OnInit {
   constructor(private loanService: LoanRequestService) { }
 
   loanForm: FormGroup;
-
+  formValid = false;
   taken = true;
- 
+  newLoanStatus = '';
 
   ngOnInit() {
     this.loanForm = new FormGroup({
@@ -31,9 +31,13 @@ export class LoanFormComponent implements OnInit {
   }
 
   onSubmit(){
-    
     this.loanForm.reset();
     this.loanForm.patchValue({extLoans :{extLoan :  'y'}, income: {incomeType : 's'}})
+    this.loanService.submitForm(this.loanForm.value).subscribe(
+      (data) => console.log(data),
+      (error) => console.log('Something went wrong'),
+      ()=> this.newLoanStatus = ''
+    );
   }
 
   extLoanStatus(type){
@@ -43,6 +47,8 @@ export class LoanFormComponent implements OnInit {
       this.taken = true;
     }
   }
+
+
   
 
 }

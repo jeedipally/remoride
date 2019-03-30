@@ -5,3 +5,6 @@ INSERT INTO loan (loanId, name, loanType, loanAmount, loanStatus) VALUES (4, 'Na
 
 
 INSERT INTO customer (id, loanId, name, salaryType, loan, rentedhouse, salAmount) VALUES (1, '1', 'ABCDE','Salaried', '10000', 'Rented', '100000');
+
+insert into remocustomer(id,name,companyName,currentLocation,income,rent) values(5,'YYYY','ddd','Hyderabad','5000000','100000');
+insert into remocustomer(id,name,companyName,currentLocation,income,rent) values(6,'zzzz','zyc','Siria','50000','10000');

@@ -17,3 +17,14 @@ CREATE TABLE  `customer`(
 	`salAmount` VARCHAR(10) NULL DEFAULT NULL,
 	PRIMARY KEY (`id`)
 );
+
+
+CREATE TABLE `remocustomer` (
+	`id` INT(11) NOT NULL,
+	`name` VARCHAR(50) NULL DEFAULT NULL,
+	`companyName` VARCHAR(50) NULL DEFAULT NULL,
+	`currentLocation` VARCHAR(50) NULL DEFAULT NULL,
+	`income` VARCHAR(50) NULL DEFAULT NULL,
+	`rent` VARCHAR(50) NULL DEFAULT NULL,
+	PRIMARY KEY (`id`)
+);

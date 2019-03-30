@@ -1,42 +1,44 @@
 package com.hacktrix.model;
 
-/* 
- * Written by Praveen Velaga 8/
- * 
+/**
+ * @author PraveenKumar Velaga
+ *
  */
 public class Loan {
 
-    private int id;
+    private int loanId;
     private String name;
     private String loanType;
     private String loanAmount;
+    private String loanStatus;
 
     public Loan() {
     }
 
-    public Loan(int id, String name, String loanType, String loanAmount) {
-        this.id = id;
+    public Loan(int loanId, String name, String loanType, String loanAmount, String loanStatus) {
+        this.loanId = loanId;
         this.name = name;
         this.loanType = loanType;
         this.loanAmount = loanAmount;
+        this.loanStatus = loanStatus;
     }
 
     
-    public String getLoanAmount() {
+    public String getLoanStatus() {
+		return loanStatus;
+	}
+
+	public void setLoanStatus(String loanStatus) {
+		this.loanStatus = loanStatus;
+	}
+
+	public String getLoanAmount() {
 		return loanAmount;
 	}
 
 	public void setLoanAmount(String loanAmount) {
 		this.loanAmount = loanAmount;
 	}
-
-	public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;
@@ -52,6 +54,14 @@ public class Loan {
 
 	public void setLoanType(String loanType) {
 		this.loanType = loanType;
+	}
+
+	public int getLoanId() {
+		return loanId;
+	}
+
+	public void setLoanId(int loanId) {
+		this.loanId = loanId;
 	}
 
     

@@ -8,7 +8,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-/* written by Praveen Velaga */
+
+/**
+ * @author PraveenKumar Velaga
+ *
+ */
 @RestController
 public class LoanItemController {
 	
@@ -31,7 +35,7 @@ public class LoanItemController {
     @RequestMapping("/addLoan")
     @ResponseBody
     public String addLoanItem(@RequestParam("id") int id,@RequestParam("name") String name,
-                          @RequestParam("loanType") String loanType, @RequestParam("loanAmount") String loanAmount){
+                          @RequestParam("loanType") String loanType, @RequestParam("loanAmount") String loanAmount, @RequestParam("loanAmount") String loanStatus ){
         if(loanRepo.addLoanItem(id,name,loanType, loanAmount) >= 1){
             return "Item Added Successfully";
         }else{

@@ -13,9 +13,9 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
-/* 
- * Written by Praveen Velaga 8/
- * 
+/**
+ * @author PraveenKumar Velaga
+ *
  */
 @Repository
 public class LoanItemRepository {
@@ -23,25 +23,23 @@ public class LoanItemRepository {
     @Autowired
     JdbcTemplate template;
 
-    /*Getting all Items from table*/
     public List<Loan> getAllLoanItems(){
-        List<Loan> items = template.query("select id, name,loanType,loanAmount from loan",(result,rowNum)->new Loan(result.getInt("id"),
-                result.getString("name"),result.getString("loanType"), result.getString("loanAmount")));
+        List<Loan> items = template.query("select loanId, name,loanType,loanAmount, loanStatus from loan",(result,rowNum)->new Loan(result.getInt("loanId"),
+                result.getString("name"),result.getString("loanType"), result.getString("loanAmount"), result.getString("loanStatus")));
         return items;
     }
-    /*Getting a specific loan item by item id from table*/
     public Loan getLoanItem(int loanItemId){
         String query = "SELECT * FROM LOAN WHERE ID=?";
         Loan item = template.queryForObject(query,new Object[]{loanItemId},new BeanPropertyRowMapper<>(Loan.class));
 
         return item;
     }
-    /*Adding an item into database table*/
+    /*Adding an LoanItems into database table======> only for admin*/
     public int addLoanItem(int id,String name,String loanType, String loanAmount){
-        String query = "INSERT INTO LOAN VALUES(?,?,?,?)";
+        String query = "INSERT INTO LOAN VALUES(?,?,?,?, ?)";
         return template.update(query,id,name,loanType,loanAmount);
     }
-    /*delete an item from database*/
+    /*delete an LoanItem from database=====> Only for Admin*/
     public int deleteItem(int id){
         String query = "DELETE FROM LOAN WHERE ID =?";
         return template.update(query,id);

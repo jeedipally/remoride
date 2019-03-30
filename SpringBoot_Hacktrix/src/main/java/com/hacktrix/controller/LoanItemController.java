@@ -18,21 +18,21 @@ public class LoanItemController {
 
     @RequestMapping("/getAllLoans")
     @ResponseBody
-    public List<Loan> getAllItems(){
-        return loanRepo.getAllItems();
+    public List<Loan> getAllLoanItems(){
+        return loanRepo.getAllLoanItems();
     }
 
     @RequestMapping("/getLoan")
     @ResponseBody
-    public Loan getItem(@RequestParam("loanId") int loanId){
-        return loanRepo.getItem(loanId);
+    public Loan getLoanItem(@RequestParam("loanId") int loanId){
+        return loanRepo.getLoanItem(loanId);
     }
 
     @RequestMapping("/addLoan")
     @ResponseBody
-    public String addItem(@RequestParam("id") int id,@RequestParam("name") String name,
+    public String addLoanItem(@RequestParam("id") int id,@RequestParam("name") String name,
                           @RequestParam("loanType") String loanType, @RequestParam("loanAmount") String loanAmount){
-        if(loanRepo.addItem(id,name,loanType, loanAmount) >= 1){
+        if(loanRepo.addLoanItem(id,name,loanType, loanAmount) >= 1){
             return "Item Added Successfully";
         }else{
             return "Something went wrong !";
@@ -40,7 +40,7 @@ public class LoanItemController {
     }
     @RequestMapping("/deteteLoan")
     @ResponseBody
-    public String deteteItem(@RequestParam("loanId") int loanId){
+    public String deteteLoanItem(@RequestParam("loanId") int loanId){
         if(loanRepo.deleteItem(loanId) >= 1){
             return "Item Deleted Successfully";
         }else{

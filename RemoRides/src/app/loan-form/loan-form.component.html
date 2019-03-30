@@ -1,5 +1,5 @@
 
-<div class="container">
+<div class="container" *ngIf="receivedData == []">
   <!-- <ngb-alert class="danger">Warning</ngb-alert> -->
   <form [formGroup]="loanForm" id="loanForm" (ngSubmit)="onSubmit()">
     <div class="row">
@@ -45,10 +45,11 @@
 </div>
 
 
-<div class="container">
+<div class="container" *ngIf="receivedData != []">
   <div class="row">
     <div class="col-md-12">
-      {{ receivedData | json}}
+      <p *ngFor="let received of receivedData"
+      [ngClass]="received.LoanStatus === 'Active' ? active : inactive">Status of Loan for loanid {{ received.loanId}} for {{ received.name}} is {{received.LoanStatus}}</p>
     </div>
   </div>
 </div>

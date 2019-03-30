@@ -21,7 +21,7 @@ public class CustomerRepository {
     JdbcTemplate template;
     
 	public int saveData(Customer cust){
-		 String query = "INSERT INTO customer VALUES(?,?,?,?)";
+		 String query = "INSERT INTO customer VALUES(?,?,?,?,?,?,?)";
 	        return template.update(query,cust.getId(),
 	        		cust.getLoanId() ,
 	        		cust.getName() ,

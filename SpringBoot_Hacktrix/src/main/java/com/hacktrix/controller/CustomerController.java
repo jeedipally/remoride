@@ -25,7 +25,12 @@ public class CustomerController {
     @RequestMapping(value="/submit", method = RequestMethod.POST)
     public String saveCustomerData(Customer cust){
     	
+    	
+    	//save the customer data .
     	custRepository.saveData(cust);
+    	
+    	//retrun customer risk profile 
+    	
     	
         return "welcome";
     }

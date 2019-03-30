@@ -4,10 +4,12 @@
 package com.hacktrix.repository;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import com.hacktrix.model.Customer;
+import com.hacktrix.model.Loan;
 
 /**
  * @author Narendar
@@ -32,6 +34,28 @@ public class CustomerRepository {
 	        		) ;
 	        		
     }
+	
+	
+	public String checkRiskProfile(Customer cust ) {
+		
+		double existLoan = getLoanAmount(cust.getId());
+		
+		double sal = cust.getSalAmount();
+		
+		String newloan = cust.getLoan();
+		
+		
+		return null;
+		
+	}
+	
+	 public double getLoanAmount(int custId){
+	        String query = "SELECT * FROM LOAN WHERE ID=?";
+	        Loan loan = template.queryForObject(query,new Object[]{custId},new BeanPropertyRowMapper<>(Loan.class));
+	        Double loanVal = Double.valueOf(loan.getLoanAmount());
+	        return loanVal.doubleValue();
+	    }
+	
 	
 	
 }

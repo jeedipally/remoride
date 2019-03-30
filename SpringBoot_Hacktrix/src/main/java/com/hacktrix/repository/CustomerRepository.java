@@ -38,22 +38,48 @@ public class CustomerRepository {
 	
 	public String checkRiskProfile(Customer cust ) {
 		
-		double existLoan = getLoanAmount(cust.getId());
+		// get the exist loan 
+		int existLoan = getLoanAmount(cust.getId());
 		
+		// salary 
 		double sal = cust.getSalAmount();
 		
+		//new loan amount 
 		String newloan = cust.getLoan();
 		
-		
-		return null;
+		Integer newloanVal = Integer.valueOf(newloan);
+
+		 int newval = newloanVal.intValue() ;
+		  
+		  
+		 int totalLoan = existLoan+newval ;
+		 
+		 int bal = (int) (sal-totalLoan) ;
+		 
+		 
+		 int factor = (int) ((bal/sal)*100) ;
+		 
+		 if(factor>75) {
+			 
+			 return "L";
+			 
+		 }else if(factor<=50) {
+			 
+			 return "H";
+			 
+		 }else {
+			 
+			 return "M";
+			 
+		 }
 		
 	}
 	
-	 public double getLoanAmount(int custId){
-	        String query = "SELECT * FROM LOAN WHERE ID=?";
+	 public int getLoanAmount(int custId){
+	        String query = "SELECT * FROM LOAN WHERE loanId=?";
 	        Loan loan = template.queryForObject(query,new Object[]{custId},new BeanPropertyRowMapper<>(Loan.class));
-	        Double loanVal = Double.valueOf(loan.getLoanAmount());
-	        return loanVal.doubleValue();
+	        Integer loanVal = Integer.valueOf(loan.getLoanAmount());
+	        return loanVal.intValue();
 	    }
 	
 	

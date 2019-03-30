@@ -24,20 +24,20 @@ public class LoanItemRepository {
     JdbcTemplate template;
 
     /*Getting all Items from table*/
-    public List<Loan> getAllItems(){
+    public List<Loan> getAllLoanItems(){
         List<Loan> items = template.query("select id, name,loanType,loanAmount from loan",(result,rowNum)->new Loan(result.getInt("id"),
                 result.getString("name"),result.getString("loanType"), result.getString("loanAmount")));
         return items;
     }
     /*Getting a specific loan item by item id from table*/
-    public Loan getItem(int itemId){
+    public Loan getLoanItem(int loanItemId){
         String query = "SELECT * FROM LOAN WHERE ID=?";
-        Loan item = template.queryForObject(query,new Object[]{itemId},new BeanPropertyRowMapper<>(Loan.class));
+        Loan item = template.queryForObject(query,new Object[]{loanItemId},new BeanPropertyRowMapper<>(Loan.class));
 
         return item;
     }
     /*Adding an item into database table*/
-    public int addItem(int id,String name,String loanType, String loanAmount){
+    public int addLoanItem(int id,String name,String loanType, String loanAmount){
         String query = "INSERT INTO LOAN VALUES(?,?,?,?)";
         return template.update(query,id,name,loanType,loanAmount);
     }

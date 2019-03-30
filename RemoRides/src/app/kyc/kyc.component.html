@@ -1,54 +1,52 @@
-<div>  
-  <form [formGroup]='signupForm' (ngSubmit)="PostData()">  
-      <div class="container">  
-    <div class="row">  
-   <div>  
-    <input type="text" formControlName='id' placeholder="Your ID">  
-    </div>  
-    <div>  
-    <input type="text" formControlName='loanId' placeholder="Loan ID">  
-    <br>  
-    <input type="text" formControlName='name' placeholder="Your name">  
-  </div> 
-</div>  
-    <br> 
-    <div class="row">
-        
-        <label>Employement Type:
-          <input  type="radio" formControlName="incomeType" value="s">Salaried
-          <input  type="radio" formControlName="incomeType" value="i">Business
-        
-        </div>
-      
+<div class="container">
+  <form [formGroup]='signupForm' (ngSubmit)="PostData()">
       <div class="row">
-          <div class="col-md-12">
-              <label>
-                  Amount per Annum: 
-                  <input type="number" min="500000" formControlName="incomeAmount">
-                </label>
-          </div>
+        <div>
+          <input type="text" formControlName='id' placeholder="Your ID">
         </div>
-        <div class="row">
-           
-            <label>House Type:
-              <input  type="radio" formControlName="houseType" value="yes">Own
-              <input  type="radio" formControlName="houseType" value="no">Rented
-            </label>
-      
-          </div>
-          <div class="row">
-              <div class="col-md-12">
-                  <label>
-                      Salary Amount: 
-                      <input type="number" min="0" formControlName="salAmount">
-                    </label>
-              </div>
-            </div> 
-  <br>  
-  <div>  
-  <button type="Submit">Submit</button>
-  </div>  
-  </div>  
-  </div>  
-  </form>  
-</div>
+        <div>
+          <input type="text" formControlName='loanId' placeholder="Loan ID">
+          <br>
+          <input type="text" formControlName='name' placeholder="Your name">
+        </div>
+      </div>
+      <br>
+      <div class="row">
+
+        <label>Employement Type:
+          <input type="radio" formControlName="incomeType" value="s">Salaried
+          <input type="radio" formControlName="incomeType" value="i">Business
+
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <label>
+            Amount per Annum:
+            <input type="number" min="500000" formControlName="incomeAmount">
+          </label>
+        </div>
+      </div>
+      <div class="row">
+
+        <label>House Type:
+          <input type="radio" formControlName="houseType" value="yes" />Own
+          <input type="radio" formControlName="houseType" value="no" />Rented
+        </label>
+
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <label>
+            Salary Amount:
+            <input type="number" min="0" formControlName="salAmount">
+          </label>
+        </div>
+      </div>
+      <br>
+      <div>
+        <button type="Submit">Submit</button>
+      </div>
+    
+
+</form>

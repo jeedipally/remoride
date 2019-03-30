@@ -15,6 +15,7 @@ import { LoanRequestService } from './services/loan-request.service';
     AppComponent,
     DashboardComponent,
     LoanFormComponent,
+    //KycComponent
   ],
   imports: [
     BrowserModule,

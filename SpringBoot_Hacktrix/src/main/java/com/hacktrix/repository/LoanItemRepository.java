@@ -29,7 +29,7 @@ public class LoanItemRepository {
         return items;
     }
     public Loan getLoanItem(int loanItemId){
-        String query = "SELECT * FROM LOAN WHERE ID=?";
+        String query = "SELECT * FROM LOAN WHERE loanId=?";
         Loan item = template.queryForObject(query,new Object[]{loanItemId},new BeanPropertyRowMapper<>(Loan.class));
 
         return item;

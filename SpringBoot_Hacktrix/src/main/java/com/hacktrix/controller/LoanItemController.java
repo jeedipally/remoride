@@ -14,7 +14,7 @@ import java.util.List;
  *
  */
 @RestController
-@CrossOrigin(origins = "*", allowedHeaders = "*")
+
 public class LoanItemController {
 	
 	
@@ -22,6 +22,7 @@ public class LoanItemController {
     LoanItemRepository loanRepo;
 
     @RequestMapping("/getAllLoans")
+    @CrossOrigin(origins = "*")
     @ResponseBody
     public List<Loan> getAllLoanItems(){
         return loanRepo.getAllLoanItems();
@@ -29,12 +30,14 @@ public class LoanItemController {
 
     @RequestMapping("/getLoan")
     @ResponseBody
+    @CrossOrigin(origins = "*")
     public Loan getLoanItem(@RequestParam("loanId") int loanId){
         return loanRepo.getLoanItem(loanId);
     }
 
     @RequestMapping("/addLoan")
     @ResponseBody
+    @CrossOrigin(origins = "*")
     public String addLoanItem(@RequestParam("id") int id,@RequestParam("name") String name,
                           @RequestParam("loanType") String loanType, @RequestParam("loanAmount") String loanAmount, @RequestParam("loanAmount") String loanStatus ){
         if(loanRepo.addLoanItem(id,name,loanType, loanAmount) >= 1){

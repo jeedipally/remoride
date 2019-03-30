@@ -1,2 +1,4 @@
-INSERT INTO loan (id, name,loanType,loanAmount) VALUES (5, 'YYYYY', 'Over Draft', '50000');
-INSERT INTO loan (id, name,loanType,loanAmount) VALUES (6, 'ZZZZZ', 'Credit Card Take over','30000');
+INSERT INTO loan (loanId, name, loanType, loanAmount, loanStatus) VALUES (1, 'PRAVEEN', 'Over Draft', '50000', 'inActive');
+INSERT INTO loan (loanId, name, loanType, loanAmount, loanStatus) VALUES (2, 'NARENDAR', 'Personal Loan','30000', 'Active');
+INSERT INTO loan (loanId, name, loanType, loanAmount, loanStatus) VALUES (3, 'Mohammad', 'HOME LOAN','30000', 'inActive');
+INSERT INTO loan (loanId, name, loanType, loanAmount, loanStatus) VALUES (4, 'Naresh', 'Credit Card','30000', 'Active');

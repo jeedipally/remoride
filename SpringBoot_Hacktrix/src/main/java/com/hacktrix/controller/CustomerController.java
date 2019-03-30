@@ -24,7 +24,9 @@ public class CustomerController {
     @ResponseBody
     @RequestMapping(value="/submit", method = RequestMethod.POST)
     public String saveCustomerData(Customer cust){
+    	
     	custRepository.saveData(cust);
+    	
         return "welcome";
     }
 

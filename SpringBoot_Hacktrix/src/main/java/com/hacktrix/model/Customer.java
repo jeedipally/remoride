@@ -9,15 +9,22 @@ package com.hacktrix.model;
  */
 public class Customer {
 	
+		private int id;
 	    private int loanId;
 	    private String name;
 	    private String salaryType;
-	    private String loanType;
+	    private String loan;
 	    private String rentedhouse;
 	    private double salAmount;
 	    
 		public int getLoanId() {
 			return loanId;
+		}
+		public String getLoan() {
+			return loan;
+		}
+		public void setLoan(String loan) {
+			this.loan = loan;
 		}
 		public void setLoanId(int loanId) {
 			this.loanId = loanId;
@@ -34,12 +41,6 @@ public class Customer {
 		public void setSalaryType(String salaryType) {
 			this.salaryType = salaryType;
 		}
-		public String getLoanType() {
-			return loanType;
-		}
-		public void setLoanType(String loanType) {
-			this.loanType = loanType;
-		}
 		public String getRentedhouse() {
 			return rentedhouse;
 		}
@@ -51,6 +52,12 @@ public class Customer {
 		}
 		public void setSalAmount(double salAmount) {
 			this.salAmount = salAmount;
+		}
+		public int getId() {
+			return id;
+		}
+		public void setId(int id) {
+			this.id = id;
 		}
 	    
 	    

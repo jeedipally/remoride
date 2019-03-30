@@ -19,11 +19,18 @@ public class CustomerRepository {
 
 	@Autowired
     JdbcTemplate template;
-	
-	
-	public String saveData(Customer cust){
-		
-		return "" ;
+    
+	public int saveData(Customer cust){
+		 String query = "INSERT INTO customer VALUES(?,?,?,?)";
+	        return template.update(query,cust.getId(),
+	        		cust.getLoanId() ,
+	        		cust.getName() ,
+	        		cust.getSalaryType(),
+	        		cust.getLoan(),
+	        		cust.getRentedhouse(),
+	        		cust.getSalAmount() 
+	        		) ;
+	        		
     }
 	
 	

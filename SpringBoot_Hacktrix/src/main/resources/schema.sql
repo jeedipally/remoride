@@ -6,3 +6,18 @@ CREATE TABLE `loan` (
 	`loanAmount` VARCHAR(50) NULL DEFAULT NULL,
 	PRIMARY KEY (`id`)
 );
+
+	    
+CREATE TABLE  'customer'(
+	`id` INT(11) NOT NULL,
+	`loanId` VARCHAR(10) NULL DEFAULT NULL,
+	`name` VARCHAR(50) NULL DEFAULT NULL,
+	`salaryType` VARCHAR(50) NULL DEFAULT NULL,
+	`loan` VARCHAR(50) NULL DEFAULT NULL,
+	`rentedhouse` VARCHAR(10) NULL DEFAULT NULL,
+	`salAmount` VARCHAR(10) NULL DEFAULT NULL,
+	PRIMARY KEY (`id`)
+);
+
+
+	    

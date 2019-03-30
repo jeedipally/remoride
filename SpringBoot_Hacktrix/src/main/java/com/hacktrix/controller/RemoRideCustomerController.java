@@ -22,12 +22,10 @@ public class RemoRideCustomerController {
 	@Autowired
 	RemoRideCustomerRepository customerRepository;
 	
-	@Autowired
-	LoanItemRepository loanItemRepository;
-		
+			
 	@RequestMapping("/addCustomer")
 	@ResponseBody
-	public String addLoanItem(@RequestParam("id") int id, @RequestParam("name") String name,
+	public String addCustomer(@RequestParam("id") int id, @RequestParam("name") String name,
 			@RequestParam("companyName") String companyName, @RequestParam("currentLocation") String currentLocation,
 			@RequestParam("income") String income, @RequestParam("rent") String rent) {
 

@@ -24,7 +24,7 @@ public class RemoRideCustomerRepository {
 
 	public int addCustomer(int id, String name, String companyName, String currentLocation, String income,
 			String rent) {
-		String query = "INSERT INTO LOAN VALUES(?,?,?,?,?,?)";
+		String query = "INSERT INTO remocustomer VALUES(?,?,?,?,?,?)";
 		return template.update(query, id, name, companyName, currentLocation, income, rent);
 
 	}

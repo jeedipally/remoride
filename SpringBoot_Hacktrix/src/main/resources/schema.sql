@@ -7,8 +7,6 @@ CREATE TABLE `loan` (
 	PRIMARY KEY (`loanId`)
 );
 
-
-	    
 CREATE TABLE  `customer`(
 	`id` INT(11) NOT NULL,
 	`loanId` VARCHAR(10) NULL DEFAULT NULL,
@@ -19,6 +17,3 @@ CREATE TABLE  `customer`(
 	`salAmount` VARCHAR(10) NULL DEFAULT NULL,
 	PRIMARY KEY (`id`)
 );
-
-
-	    

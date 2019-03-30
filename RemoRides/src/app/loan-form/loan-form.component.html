@@ -1,6 +1,6 @@
 
 <div class="container">
-  <form [formGroup]="loanForm" (ngSubmit)="onSubmit()">
+  <form [formGroup]="loanForm" id="loanForm" (ngSubmit)="onSubmit()">
     <div class="row">
         <div class="col-md-12">
             <label>
@@ -23,7 +23,7 @@
       <div class="col-md-12">
           <label>
               Amount per Annum: 
-              <input type="number" formControlName="incomeAmount">
+              <input type="number" min="500000" formControlName="incomeAmount">
             </label>
       </div>
     </div>
@@ -32,8 +32,8 @@
             <label>
                 Any existing loans: 
                 <span formGroupName="extLoans">
-                    <input type="radio" formControlName="extLoan" value="y">Yes
-                    <input type="radio" formControlName="extLoan" value="n">No
+                    <input type="radio" formControlName="extLoan" value="y" (click)="extLoanStatus('y')">Yes
+                    <input type="radio" formControlName="extLoan" value="n" (click)="extLoanStatus('n')">No
                 </span>
               </label>
         </div>
@@ -41,7 +41,7 @@
       <div class="row" *ngIf="taken">
         <div class="col-md-12">
           <label>Enter Amount of Loan per annum: 
-              <input type="number" formControlName="loanAmount">
+              <input type="number" min=0 formControlName="loanAmount">
           </label>
         </div>
       </div>

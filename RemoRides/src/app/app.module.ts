@@ -1,11 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoanFormComponent } from './loan-form/loan-form.component';
 import { LoanRequestService } from './services/loan-request.service';
+
 
 @NgModule({
   declarations: [
@@ -16,7 +18,8 @@ import { LoanRequestService } from './services/loan-request.service';
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpModule
   ],
   providers: [LoanRequestService],
   bootstrap: [AppComponent]

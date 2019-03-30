@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoanFormComponent } from './loan-form/loan-form.component';
+import { KycComponent } from './kyc/kyc.component';
 import { LoanRequestService } from './services/loan-request.service';
 
 
@@ -13,7 +14,7 @@ import { LoanRequestService } from './services/loan-request.service';
   declarations: [
     AppComponent,
     DashboardComponent,
-    LoanFormComponent
+    LoanFormComponent,
   ],
   imports: [
     BrowserModule,

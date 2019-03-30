@@ -13,8 +13,18 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
   }
 
+ 
+
   formToggle(){
     this.loanService.toggleLoanForm();
     console.log(this.loanService.toggleLoan);
+  }
+
+  getLoans(){
+    console.log("Trying to get loan");
+    this.loanService.getLoanStatus().subscribe(
+      (data) => console.log(data),
+      (error)=> console.log(error)
+    );
   }
 }

@@ -2,44 +2,46 @@ package com.hacktrix.controller;
 import java.util.List;
 
 import com.hacktrix.model.Loan;
-import com.hacktrix.repository.ItemRepository;
+import com.hacktrix.repository.LoanItemRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+/* written by Praveen Velaga */
 @RestController
-public class ItemController {
+public class LoanItemController {
+	
+	
     @Autowired
-    ItemRepository itemRepo;
+    LoanItemRepository loanRepo;
 
-    @RequestMapping("/getAllItems")
+    @RequestMapping("/getAllLoans")
     @ResponseBody
     public List<Loan> getAllItems(){
-        return itemRepo.getAllItems();
+        return loanRepo.getAllItems();
     }
 
-    @RequestMapping("/getItem")
+    @RequestMapping("/getLoan")
     @ResponseBody
-    public Loan getItem(@RequestParam("itemId") int itemId){
-        return itemRepo.getItem(itemId);
+    public Loan getItem(@RequestParam("loanId") int loanId){
+        return loanRepo.getItem(loanId);
     }
 
-    @RequestMapping("/addItem")
+    @RequestMapping("/addLoan")
     @ResponseBody
     public String addItem(@RequestParam("id") int id,@RequestParam("name") String name,
-                          @RequestParam("category") String category){
-        if(itemRepo.addItem(id,name,category) >= 1){
+                          @RequestParam("loanType") String loanType, @RequestParam("loanAmount") String loanAmount){
+        if(loanRepo.addItem(id,name,loanType, loanAmount) >= 1){
             return "Item Added Successfully";
         }else{
             return "Something went wrong !";
         }
     }
-    @RequestMapping("/deteteItem")
+    @RequestMapping("/deteteLoan")
     @ResponseBody
-    public String deteteItem(@RequestParam("itemId") int itemId){
-        if(itemRepo.deleteItem(itemId) >= 1){
+    public String deteteItem(@RequestParam("loanId") int loanId){
+        if(loanRepo.deleteItem(loanId) >= 1){
             return "Item Deleted Successfully";
         }else{
             return "Something went wrong !";

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
+import { LoanRequestService } from '../services/loan-request.service';
 
 @Component({
   selector: 'app-loan-form',
@@ -7,9 +9,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoanFormComponent implements OnInit {
 
-  constructor() { }
+  constructor(private loanService: LoanRequestService) { }
+
+  loanForm: FormGroup;
+
+  taken = true;
 
   ngOnInit() {
+    this.loanForm = new FormGroup({
+      name: new FormControl(''),
+      income : new FormGroup({
+        incomeType : new FormControl('')
+      }),
+      incomeAmount: new FormControl(),
+      extLoans: new FormGroup({
+        extLoan: new FormControl('')
+      }),
+      loanAmount: new FormControl()
+    });
+
+  }
+
+  onSubmit(){
+    console.log(this.loanForm);
+    console.log(this.taken);
   }
 
 }

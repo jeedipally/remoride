@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoanRequestService } from '../services/loan-request.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,12 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  constructor(private loanService: LoanRequestService) { }
 
   ngOnInit() {
   }
 
-  onLoanRequest(){
-    
+  formToggle(){
+    this.loanService.toggleLoanForm();
+    console.log(this.loanService.toggleLoan);
   }
 }

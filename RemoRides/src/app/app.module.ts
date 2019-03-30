@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoanFormComponent } from './loan-form/loan-form.component';
+import { LoanRequestService } from './services/loan-request.service';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,7 @@ import { LoanFormComponent } from './loan-form/loan-form.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [LoanRequestService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

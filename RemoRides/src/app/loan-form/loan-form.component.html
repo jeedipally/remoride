@@ -1,0 +1,55 @@
+
+<div class="container">
+  <form [formGroup]="loanForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+        <div class="col-md-12">
+            <label>
+              Name:
+              <input type="text" formControlName="name">
+            </label>
+          </div>
+    </div>
+   <br>
+    <div class="row">
+      <div class="col-md-6" formGroupName="income">
+      <label>Employement Type:
+        <input  type="radio" formControlName="incomeType" value="s">Salaried
+        <input  type="radio" formControlName="incomeType" value="i">Business
+      </label>
+      </div>
+    </div>
+     <br>
+    <div class="row">
+      <div class="col-md-12">
+          <label>
+              Amount per Annum: 
+              <input type="number" formControlName="incomeAmount">
+            </label>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <label>
+                Any existing loans: 
+                <span formGroupName="extLoans">
+                    <input type="radio" formControlName="extLoan" value="y">Yes
+                    <input type="radio" formControlName="extLoan" value="n">No
+                </span>
+              </label>
+        </div>
+      </div>
+      <div class="row" *ngIf="taken">
+        <div class="col-md-12">
+          <label>Enter Amount of Loan per annum: 
+              <input type="number" formControlName="loanAmount">
+          </label>
+        </div>
+      </div>
+
+    
+    <br>
+    <hr>
+    <button class="btn btn-primary" type="submit">Submit</button>
+  
+  </form>
+</div>

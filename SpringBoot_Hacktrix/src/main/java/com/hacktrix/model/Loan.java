@@ -1,24 +1,36 @@
 package com.hacktrix.model;
 
+/* 
+ * Written by Praveen Velaga 8/
+ * 
+ */
 public class Loan {
 
     private int id;
     private String name;
-    private String category;
     private String loanType;
-    private RemoRideCustomer customer;
+    private String loanAmount;
 
     public Loan() {
     }
 
-    public Loan(int id, String name, String category, String loanType, RemoRideCustomer customer) {
+    public Loan(int id, String name, String loanType, String loanAmount) {
         this.id = id;
         this.name = name;
-        this.category = category;
         this.loanType = loanType;
+        this.loanAmount = loanAmount;
     }
 
-    public int getId() {
+    
+    public String getLoanAmount() {
+		return loanAmount;
+	}
+
+	public void setLoanAmount(String loanAmount) {
+		this.loanAmount = loanAmount;
+	}
+
+	public int getId() {
         return id;
     }
 
@@ -34,14 +46,6 @@ public class Loan {
         this.name = name;
     }
 
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
-    }
-
 	public String getLoanType() {
 		return loanType;
 	}
@@ -50,13 +54,5 @@ public class Loan {
 		this.loanType = loanType;
 	}
 
-	public RemoRideCustomer getCustomer() {
-		return customer;
-	}
-
-	public void setCustomer(RemoRideCustomer customer) {
-		this.customer = customer;
-	}
-    
     
 }

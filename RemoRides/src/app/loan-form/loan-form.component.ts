@@ -30,11 +30,14 @@ export class LoanFormComponent implements OnInit {
     });
   }
 
+  receivedData = [];
   onSubmit(){
     this.loanForm.reset();
     this.loanForm.patchValue({extLoans :{extLoan :  'y'}, income: {incomeType : 's'}})
     this.loanService.submitForm(this.loanForm.value).subscribe(
-      (data) => console.log(data),
+      (data) => { this.receivedData.push(data),
+        console.log(data)
+      },
       (error) => console.log('Something went wrong'),
       ()=> this.newLoanStatus = ''
     );
